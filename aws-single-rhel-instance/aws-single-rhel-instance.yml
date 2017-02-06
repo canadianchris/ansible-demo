@@ -8,5 +8,9 @@
       ec2:
         instance_type: t2.micro
         image: "{{ ami_id }}"
+        region: us-east-1d
         wait: true
       register: ec2
+
+    - name: Add instance public IP to group
+      add_host: hostname=ec2.instances.public_ip groups=ec2hosts
