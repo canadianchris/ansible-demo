@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+
+    - name: Provision instance
+      ec2:
+        instance_type: t2.micro
+        image: "{{ ami_id }}"
+        wait: true
+      register: ec2
