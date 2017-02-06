@@ -8,7 +8,7 @@
       ec2:
         instance_type: t2.micro
         image: "{{ ami_id }}"
-        region: us-east-1d
+        region: us-east-1
         wait: true
       register: ec2
 
